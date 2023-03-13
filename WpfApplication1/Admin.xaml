@@ -1,0 +1,19 @@
+﻿<Window x:Class="WpfApplication1.Admin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="Admin" Height="450" Width="800">
+    <Grid>
+
+        <StackPanel VerticalAlignment="Center">
+            <TextBox x:Name ="login"/>
+            <TextBox x:Name ="passw"/>
+            <Button x:Name="enter" Content="Enter" Click="enter_Click"/>
+            <Button x:Name="reg" Content="reg" Click="reg_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

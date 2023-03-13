@@ -1,0 +1,123 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="Регистрация" 
+        Height="450" 
+        Width="643">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="51*"/>
+
+        </Grid.RowDefinitions>
+        <Label Content="Регистрация"
+               FontSize="24"
+               Margin="10 0"
+               VerticalAlignment="Center"/>
+        <Grid Grid.Row="1">
+            <WrapPanel VerticalAlignment="Center">
+                <StackPanel Margin="18 5"
+                        VerticalAlignment="Center">
+                    <TextBlock Text="Имя"
+                           FontSize="20"
+                           Margin="10 5"/>
+                    <TextBox x:Name="nameTxt" 
+                         Text="TRtsradas"
+                         FontSize="20"
+                         Width="200"
+                          Margin="10 5"/>
+
+                    <TextBlock Text="Фамилия"
+                           FontSize="20"
+                            Margin="10 5"/>
+                    <TextBox x:Name="lastnameTxt" 
+                         Text="TRtsradas"
+                         FontSize="20"
+                         Width="200"
+                          Margin="10 5"/>
+
+                    <TextBlock Text="Отчество"
+                           FontSize="20"
+                            Margin="10 5"/>
+                    <TextBox x:Name="srnameTxt" 
+                         Text="TRtsradas"
+                         FontSize="20"
+                         Width="200"
+                          Margin="10 5"/>
+
+                    <TextBlock Text="Дата рождения"
+                           FontSize="20"
+                            Margin="10 5"/>
+                    <DatePicker x:Name="dobPicker"
+                            FontSize="20"
+                             Margin="10 5"/>
+                </StackPanel>
+                <StackPanel>
+
+
+                    <GroupBox x:Name="grGen"
+                          Header="Пол"
+                            FontSize="20"
+                             Margin="10 5">
+                        <StackPanel Margin="10">
+                            <RadioButton GroupName="gender"
+                                     Content="Женский"
+                                     x:Name="genf_rb"
+                                         FontSize="15"
+                                     />
+                            <RadioButton GroupName="gender"
+                                     Content="Мужской"
+                                     x:Name="genm_rb"
+                                         FontSize="15"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <TextBlock Text="Электронная почта"
+                           FontSize="20"
+                            Margin="10 5"/>
+                    <TextBox x:Name="elmailTxt" 
+                         Text="TRtsradas"
+                         FontSize="20"
+                         Width="200"
+                          Margin="10 5"/>
+                    <TextBlock Text="Пароль"
+                           FontSize="20"
+                            Margin="10 5"/>
+                    <PasswordBox x:Name="passwdBx"  
+                         FontSize="20"
+                         Width="200"
+                          Margin="10 5"/>
+                    <TextBlock Text="Повторите пароль"
+                           FontSize="20"
+                            Margin="10 5"/>
+                    <PasswordBox x:Name="reppasswdBx"  
+                         FontSize="20"
+                         Width="200"
+                          Margin="10 5"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="Фото профиля"
+                               FontSize="15"/>
+                    <Image x:Name="profilePic" Source="/Pics\dummyimage.jpg" 
+                            Height="100"
+                           Width="100"
+                           />
+                    
+                    
+                    <Button x:Name="addPhoto"
+                            Margin="0 5"
+                            Content="Добавить фото"
+                            Click="addPhoto_Click"/>
+                    <Button x:Name="endRegistr"
+                            Content="Зарегистрироваться"
+                            Click="endRegistr_Click"
+                            Margin="0 140 0 0"/>
+                </StackPanel>
+            </WrapPanel>
+        </Grid>
+
+    </Grid>
+</Window>
