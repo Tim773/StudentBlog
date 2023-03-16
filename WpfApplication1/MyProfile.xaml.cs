@@ -19,20 +19,17 @@ namespace WpfApplication1
     /// </summary>
     public partial class MyProfile : Window
     {
-        public MyProfile()
+        public MyProfile(Person person)
         {
             InitializeComponent();
+
         }
         //Хз, что можно еще сделать в этом окне, пока не рассказано про бд. Тут и вывод можно сделать по входящему юзеру, 
         //и вывод текстового файла в фрейм, но с фреймами надо поработать сразу со студентами.
         private void changeInfo_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void changePassword_Click(object sender, RoutedEventArgs e)
-        {
-
+            EditProfile editProfile = new EditProfile();
+            editProfile.ShowDialog();
         }
     }
 }

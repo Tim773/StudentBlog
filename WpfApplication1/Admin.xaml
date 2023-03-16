@@ -9,10 +9,34 @@
     <Grid>
 
         <StackPanel VerticalAlignment="Center">
-            <TextBox x:Name ="login"/>
-            <TextBox x:Name ="passw"/>
-            <Button x:Name="enter" Content="Enter" Click="enter_Click"/>
-            <Button x:Name="reg" Content="reg" Click="reg_Click"/>
+            <TextBlock Text="Авторизация"
+                       TextAlignment="Center"
+                       FontSize="18"
+                       Width="200"/>
+            <TextBlock Text="Логин"
+                       TextAlignment="Center"
+                       Width="180"
+                       Margin="5"/>
+            <TextBox x:Name ="login"
+                     Width="180"
+                     Margin="10"/>
+            <TextBlock Text="Пароль"
+                       TextAlignment="Center"
+                       Width="180"
+                       Margin="5"/>
+            <PasswordBox x:Name ="passw"
+                     Width="180"
+                     Margin="10"/>
+            <Button x:Name="enter" 
+                    Content="Авторизоваться" 
+                    Click="enter_Click"
+                    Width="160"
+                    Margin="10"/>
+            <Button x:Name="reg" 
+                    Content="Регистрация" 
+                    Click="reg_Click"
+                    Width="160"
+                    Margin="10"/>
         </StackPanel>
 
     </Grid>

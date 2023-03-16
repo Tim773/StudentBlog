@@ -76,7 +76,7 @@ namespace WpfApplication1
              lastnameTxt.Text == string.Empty ||
              srnameTxt.Text == string.Empty ||
              elmailTxt.Text == string.Empty ||
-             passwdBx.Password == string.Empty ||       // 00:56 я всрал уйму времени на поиск возможности проверки паролей для метода, в котором допусти логическую ошибку, помянем
+             passwdBx.Password == string.Empty ||       
              reppasswdBx.Password == string.Empty ||
              (genf_rb.IsChecked == false && genm_rb.IsChecked == false) ||
              dobPicker.SelectedDate == null) 
