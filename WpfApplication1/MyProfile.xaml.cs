@@ -20,11 +20,12 @@ namespace WpfApplication1
     /// </summary>
     public partial class MyProfile : Window
     {
-       private Person user;
+      
         public MyProfile(Person person)
         {
             InitializeComponent();
-            user = person;
+            Person user = person;
+            UserDataPull(user);
 
         }
         
@@ -34,11 +35,15 @@ namespace WpfApplication1
             editProfile.ShowDialog();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void UserDataPull(Person user)
         {
-            Person activeUser = AppClass.entities.Person.Where(i => i.email == user.email).FirstOrDefault();
+            Person activeUser = AppClass.entities.Person.
+                Where(i => i.email == user.email).FirstOrDefault();
             userName.Text = activeUser.namePerson.ToString();
             userLastName.Text = activeUser.fNamePerson.ToString();
+            userSrName.Text = activeUser.sNamePerson.ToString();
+            //profilePic.Source = activeUser.photoPath; //данный вариант не работает
+
 
         }
     }
