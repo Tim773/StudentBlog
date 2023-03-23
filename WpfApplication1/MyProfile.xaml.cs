@@ -47,5 +47,11 @@ namespace WpfApplication1
 
 
         }
+
+        //добавление поста
+        private void addText_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
