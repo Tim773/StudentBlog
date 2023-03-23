@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="EditProfile" Height="450" Width="800">
+        Title="EditProfile" 
+        SizeToContent="WidthAndHeight">
     <Grid>
         <StackPanel>
             <StackPanel Orientation="Horizontal">
@@ -20,6 +21,7 @@
                     <TextBlock Text="Фото должно иметь равные пропорции высоты и ширины для корректного отображения в приложении, пожалуйства выбирайте фотографии согласно требованиям!"
                                TextWrapping="Wrap"
                                TextAlignment="Center"
+                               Margin="0 20 0 0"
                                Width="300"
                                Height="70"
                                />
