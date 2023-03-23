@@ -24,6 +24,7 @@ namespace WpfApplication1
         public MyProfile(Person person)
         {
             InitializeComponent();
+            dataFrame.Navigate(new Pages.MainPage());
             Person user = person;
             UserDataPull(user);
 
@@ -38,7 +39,7 @@ namespace WpfApplication1
         private void UserDataPull(Person user)
         {
             Person activeUser = AppClass.entities.Person.
-                Where(i => i.email == user.email).FirstOrDefault();
+            Where(i => i.email == user.email).FirstOrDefault();
             userName.Text = activeUser.namePerson.ToString();
             userLastName.Text = activeUser.fNamePerson.ToString();
             userSrName.Text = activeUser.sNamePerson.ToString();
