@@ -18,9 +18,9 @@ namespace WpfApplication1
     /// <summary>
     /// Логика взаимодействия для Admin.xaml
     /// </summary>
-    public partial class Admin : Window
+    public partial class Autoriz : Window
     {
-        public Admin()
+        public Autoriz()
         {
             InitializeComponent();
 
