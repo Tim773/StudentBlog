@@ -14,8 +14,8 @@
             <RowDefinition Height="51*"/>
 
         </Grid.RowDefinitions>
-        <Label Content="Регистрация"
-               FontSize="24"
+        <TextBlock Text="Регистрация"
+               FontSize="40"
                Margin="10 0"
                VerticalAlignment="Center"/>
         <Grid Grid.Row="1">
