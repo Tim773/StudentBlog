@@ -30,41 +30,46 @@ namespace WpfApplication1
         private void enter_Click(object sender, RoutedEventArgs e)
         {
             
-            try
+            try //конструкция try-catch на случай непредвиденных ошиибок
             {
-                if (EmptyCheck() == true) 
+                if (EmptyCheck() == true) //проверка введены ли все данные на форме
                 
                 {
-                    var authUser = entities.Person.Where(i => i.email == login.Text && i.password == passw.Password).FirstOrDefault();
-                    if (authUser != null)
+                    Entities entities = new Entities(); //создание экземпляра класса вашей базы данных (у вас он может называться иначе)
+                    Person authUser = entities.Person.Where(i => i.email == login.Text && i.password == passw.Password).FirstOrDefault();
+                    //в строке выше объявляется переменная типа var, которая хранит строку пользователя из таблицы в БД, логин и пароль которого совпадают с
+                    //введёнными значениями в форму авторизации
+                    if (authUser != null) //проверка на наличие пользователя с введёнными данными. Если в базе данных нет пользователя с такими данными переменная = NULL               
                     {
-                        //Вызов окна профиля, создание его экземпляра
+                        //Вызов окна профиля, создание его экземпляра и передача окну профиля информации о вошедшем пользователе
                         MyProfile myProfile = new MyProfile(authUser);
                         //Вызов метода ShowDialog из созданного экземпляра
                         myProfile.ShowDialog();
                     }
                     else
                     {
+                        //Сообщение пользователю в случае, если в базе данных нет пользователей с введёнными логином и паролем
                         MessageBox.Show("Пользователь не найден!", "Авторизация пользователя", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                        passw.Password = string.Empty;
+                        passw.Password = string.Empty; //очищение поля пароля на форме авторизации
 
                     }
                 }                
             }
             catch (Exception exeption)
             {                
-                MessageBox.Show($"{exeption}");
+                MessageBox.Show($"{exeption}"); //возврат текста ошибки без остановки приложения
                 throw;
             }
         }
         private bool EmptyCheck()
         {
-            if (login.Text != string.Empty && passw.Password != string.Empty)
+            if (login.Text != string.Empty && passw.Password != string.Empty) //проверка, не пустые ли поля логина и пароля
             {
-                return true;
+                return true; 
             }
             else
             {
+                //сообщение, появляющееся в случае, если не все поля заполнены
                 MessageBox.Show("Вы указали не все данные!", "Авторизация пользователя", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return false;
             } 
