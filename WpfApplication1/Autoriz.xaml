@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
         SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen"
         Title="Autoriz">
     <Grid>
 
