@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,19 +16,13 @@ using System.Windows.Shapes;
 namespace WpfApplication1.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainPage.xaml
+    /// Логика взаимодействия для EditPost.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class EditPost : Page
     {
-        public MainPage()
+        public EditPost()
         {
             InitializeComponent();
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            StreamReader reader = new StreamReader("TextFiles/1_1post.txt");
-            postText.Text = reader.ReadToEnd();
         }
     }
 }

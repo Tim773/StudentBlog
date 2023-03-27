@@ -40,6 +40,11 @@
                        Height="20"
                        VerticalAlignment="Center"
                        Text ="FatherName" Canvas.Left="463" Canvas.Top="55" HorizontalAlignment="Left"/>
+            <Button x:Name="addText"
+                Content="Добавить запись"
+                    Click="addText_Click" 
+                    Canvas.Left="22"
+                    Canvas.Top="195"/>
 
             <Frame x:Name="dataFrame"
                    Width="504"
