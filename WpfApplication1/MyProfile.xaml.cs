@@ -31,5 +31,23 @@ namespace WpfApplication1
             EditProfile editProfile = new EditProfile();
             editProfile.ShowDialog();
         }
+
+        private void UserDataPull(Person user)
+        {
+            Person activeUser = AppClass.entities.Person.
+                Where(i => i.email == user.email).FirstOrDefault();
+            userName.Text = activeUser.namePerson.ToString();
+            userLastName.Text = activeUser.fNamePerson.ToString();
+            userSrName.Text = activeUser.sNamePerson.ToString();
+            //profilePic.Source = activeUser.photoPath; //данный вариант не работает
+
+
+        }
+
+        //добавление поста
+        private void addText_Click(object sender, RoutedEventArgs e)
+        {
+            dataFrame.Navigate(new Pages.EditPost());
+        }
     }
 }
