@@ -24,5 +24,10 @@ namespace WpfApplication1.Pages
         {
             InitializeComponent();
         }
+
+        private void savePost_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

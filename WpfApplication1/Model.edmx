@@ -24,7 +24,7 @@
           <Property Name="idGender" Type="int" Nullable="false" />
           <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="photoPath" Type="nvarchar" MaxLength="200" />
+          <Property Name="photoPath" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -112,7 +112,7 @@
           <Property Name="idGender" Type="Int32" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="photoPath" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="photoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Gender" Relationship="Self.FK_Person_Gender" FromRole="Person" ToRole="Gender" />
         </EntityType>
         <EntityType Name="sysdiagrams">

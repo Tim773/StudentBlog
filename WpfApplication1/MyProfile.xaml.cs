@@ -61,11 +61,8 @@ namespace WpfApplication1
             }
             else
             {
-                return new BitmapImage(new Uri("C:\\Users\\btimo\\source\\repos\\WpfApplication1\\WpfApplication1\\Pics\\dummyimage.jpg"));
+                return new BitmapImage(new Uri("pack://application:,,,/Pics/dummyimage.jpg"));
             }
-
-            
-
 
         }
         //добавление поста
