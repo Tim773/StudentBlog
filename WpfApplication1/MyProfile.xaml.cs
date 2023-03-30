@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace WpfApplication1
     /// </summary>
     public partial class MyProfile : Window
     {
-      
+
         public MyProfile(Person person)
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace WpfApplication1
             UserDataPull(user);
 
         }
-        
+
         private void changeInfo_Click(object sender, RoutedEventArgs e)
         {
             EditProfile editProfile = new EditProfile();
@@ -43,11 +44,27 @@ namespace WpfApplication1
             userName.Text = activeUser.namePerson.ToString();
             userLastName.Text = activeUser.fNamePerson.ToString();
             userSrName.Text = activeUser.sNamePerson.ToString();
-            //profilePic.Source = activeUser.photoPath; //данный вариант не работает
+            profilePic.Source = Sourcer(activeUser);
+            //profilePic.Source = $""{activeUser.photoPath}"";
 
 
         }
 
+        private BitmapImage Sourcer(Person person)
+        {
+            if (person.photoPath != null)
+            {
+                return new BitmapImage(new Uri(person.photoPath));
+            }
+            else
+            {
+                return new BitmapImage(new Uri("C:\\Users\\btimo\\source\\repos\\WpfApplication1\\WpfApplication1\\Pics\\dummyimage.jpg"));
+            }
+
+            
+
+
+        }
         //добавление поста
         private void addText_Click(object sender, RoutedEventArgs e)
         {
