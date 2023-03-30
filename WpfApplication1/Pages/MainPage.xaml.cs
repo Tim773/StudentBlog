@@ -28,8 +28,8 @@ namespace WpfApplication1.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            StreamReader reader = new StreamReader("TextFiles/1_1post.txt");
-            postText.Text = reader.ReadToEnd();
+           // StreamReader reader = new StreamReader("TextFiles/1_1post.txt");
+            //postText.Text = reader.ReadToEnd();
         }
     }
 }
