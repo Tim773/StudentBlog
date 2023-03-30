@@ -14,8 +14,8 @@
             <RowDefinition Height="51*"/>
 
         </Grid.RowDefinitions>
-        <Label Content="Регистрация"
-               FontSize="24"
+        <TextBlock Text="Регистрация"
+               FontSize="40"
                Margin="10 0"
                VerticalAlignment="Center"/>
         <Grid Grid.Row="1">
@@ -29,7 +29,7 @@
                          Text="TRtsradas"
                          FontSize="20"
                          Width="200"
-                          Margin="10 5"/>
+                         Margin="10 5"/>
 
                     <TextBlock Text="Фамилия"
                            FontSize="20"
@@ -38,7 +38,7 @@
                          Text="TRtsradas"
                          FontSize="20"
                          Width="200"
-                          Margin="10 5"/>
+                         Margin="10 5"/>
 
                     <TextBlock Text="Отчество"
                            FontSize="20"

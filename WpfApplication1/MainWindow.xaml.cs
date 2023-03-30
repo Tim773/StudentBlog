@@ -43,34 +43,27 @@ namespace WpfApplication1
 
         private void endRegistr_Click(object sender, RoutedEventArgs e)
         {
-            if (EmptyCheck() == true &&
+            if (EmptyCheck() == true && //условие проверки всех значений согласно методам валидации
                 PasswordMatching() == true &&
                 DateCheck() == true)
-            {               
-                entities.Person.Add(new Person
+            {
+                Entities entities = new Entities(); //создание экземпляра класса вашей базы данных (у вас он может называться иначе)
+                //обращение к классу Person, вызов метода Add, аргументом которого является созданный экземпляр класса
+                //Person из введённых в форму значений
+                entities.Person.Add(new Person  
                 {
                     namePerson = nameTxt.Text,
                     fNamePerson = lastnameTxt.Text,
                     sNamePerson = srnameTxt.Text,
                     dob = dobPicker.DisplayDate,
-                    idGender = ChoosingGender(),
+                    idGender = ChoosingGender(), //обращение к методу, который определяет выбранный на форме гендер
                     email = elmailTxt.Text,
                     password = passwdBx.Password                   
                 });
-                entities.SaveChanges();
+                entities.SaveChanges(); //сохранение изменений в таблице БД
             }
-
-
-
-            //    private void AddAccount()
-            //    {
-            //        Users.Users users = new Users.Users(name_txt.Text, lastname_txt.Text, 
-            //            srname_txt.Text, dob_picker.DisplayDate, 
-            //            passwd_bx.Password, elmail_txt.Text);
-
-            //    }
         }
-        private bool EmptyCheck()
+        private bool EmptyCheck() //проверка на заполнене всех полей при реггистрации
         {
             if (nameTxt.Text == string.Empty ||
              lastnameTxt.Text == string.Empty ||
@@ -89,7 +82,7 @@ namespace WpfApplication1
             return true;
             
         }
-        private bool PasswordMatching() 
+        private bool PasswordMatching() //проверка на совпадение поля пароля и повтора пароля
         {
             if (passwdBx.Password == reppasswdBx.Password)
             {
@@ -100,10 +93,20 @@ namespace WpfApplication1
         }
         private bool DateCheck()
         {
-            //Дописать проверку даты. Дата должна быть не позднее "сегодняшнееЧисло - 6 лет"
-            return true;
+            //создаём bool переменную, которая содержит информацию, раньше или позднее выбранная в
+            //datePicker-e дата относительно (ТекущаяДата - шесть лет)
+            bool answer = dobPicker.SelectedDate < DateTime.Today.AddYears(-6);
+            if (answer == true)
+            {
+                return answer;
+            }
+            else 
+            {
+                MessageBox.Show("Неверная дата рождения", "Регистрация пользователя", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                return answer;                
+            }             
         }
-        private int ChoosingGender()
+        private int ChoosingGender() //выбор отправляемого значения гендера в базу данных в зависимости от отмеченного RadioButton
         {            
             if (genm_rb.IsChecked == true)
                 return 1;

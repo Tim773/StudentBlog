@@ -1,0 +1,68 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    
+    <!--Цвета-->
+    <LinearGradientBrush  StartPoint="0.5, 0.1"
+        x:Key="MainBackground">
+        <GradientStop Color="#BAACBD" Offset="0.2"/>
+        <GradientStop Color="#D8FFBE" Offset="0.5"/>
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="TextBox_grad"
+                         EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFDED6E2" Offset="0.595"/>
+        <GradientStop Color="#D8FFBE" Offset="0.299"/>
+        <GradientStop Color="#FF785589" 
+                      Offset="1.74"/>
+
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="TextColor"
+                     Color="#2B061E"/>
+    <!--Windows-->
+    <Style TargetType="{x:Type Window}">
+        <Setter Property="Background" Value="{DynamicResource MainBackground}"/>
+      
+        <Setter Property="FontFamily" Value="Bahnschrift Light SemiCondensed"/>
+    </Style>
+    <!--TextBlock-->
+    <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
+    </Style>
+    <!--TextBox-->
+    <Style TargetType="{x:Type TextBox}"
+           >
+        <Setter Property="Background" Value="{StaticResource TextBox_grad}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TextBox_grad}"/>
+    </Style>
+    <Style TargetType="{x:Type PasswordBox}"
+           >
+        <Setter Property="Background" Value="{StaticResource TextBox_grad}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TextBox_grad}"/>
+        <Setter Property="PasswordChar" Value="♥"/>
+    </Style>
+
+    <Style TargetType="{x:Type Button}">
+        <Style.Triggers>
+            <Trigger Property="Button.IsMouseOver" Value="True">
+                <Setter Property="ItemsControl.Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="0"
+                            BorderBrush="Transparent"
+                                Background="#FF6B6C"
+                                BorderThickness="0.5">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>    
+    </Style>
+
+   
+    
+</ResourceDictionary>

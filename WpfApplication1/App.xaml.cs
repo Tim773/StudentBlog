@@ -11,6 +11,8 @@ namespace WpfApplication1
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
+    /// TIMBERDETH\NORM
+    /// 224-TEACHER\SQLEXPRESS
     public partial class App : Application
     {
     }

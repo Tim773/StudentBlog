@@ -5,63 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
+      
         Title="MyProfile" Height="450" Width="800">
     <Grid>
-        <StackPanel Orientation="Horizontal">
-            <StackPanel Orientation="Horizontal" Width="150">
-                <StackPanel Orientation="Vertical"                    
-                    HorizontalAlignment="Left">
-                    <Image x:Name="profilePic" Source="/Pics\dummyimage.jpg" 
+        <Canvas>
+            <Image x:Name="profilePic" Source="/Pics\dummyimage.jpg" 
                    Height="140"
                    Width="140"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    Margin="5"
                    />
-                    <StackPanel Orientation="Horizontal" Width="153">
-                        <Button x:Name="changeInfo"
+            <Button x:Name="changeInfo"
                         Content="Изменить информацию"
                         Width="140"
                         Height="20"
-                        Click="changeInfo_Click"
-                        Margin ="10"/>
-
-                    </StackPanel>
-                </StackPanel>
-                <Frame x:Name="dataFrame"
-                   Margin="10"
-                   Width="auto"
-                   Height="auto">
-
-                </Frame>
-            </StackPanel>
-            <StackPanel Height="50"
-                        VerticalAlignment="Top"
-                        Orientation="Horizontal"
-                        Margin="0 20 0 0">
-                <TextBlock x:Name="userLastName"                           
+                        Click="changeInfo_Click" Canvas.Left="10" Canvas.Top="166" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="userLastName"                           
                        Width="120" 
                        Height="20"
-                       VerticalAlignment="Top"
-                       Margin="10"
-                       Text ="LastName"
-                       />
-                <TextBlock x:Name="userName" 
-                       Width="120" 
-                       Height="20"
-                       VerticalAlignment="Top"
-                       Margin="10"
-                           Text ="Name"
+                       VerticalAlignment="Center"
+                       Text ="LastName" Canvas.Left="183" Canvas.Top="55" HorizontalAlignment="Left"
                        />
 
-                <TextBlock x:Name="userSrName" 
+            <TextBlock x:Name="userName" 
                        Width="120" 
                        Height="20"
-                       VerticalAlignment="Top"
-                       Margin="10"
-                           Text ="FatherName"
+                       VerticalAlignment="Center"
+                           Text ="Name" Canvas.Left="343" Canvas.Top="55" HorizontalAlignment="Left"
                        />
-            </StackPanel>
-        </StackPanel>
+
+            <TextBlock x:Name="userSrName" 
+                       Width="120" 
+                       Height="20"
+                       VerticalAlignment="Center"
+                       Text ="FatherName" Canvas.Left="463" Canvas.Top="55" HorizontalAlignment="Left"/>
+            <Button x:Name="addText"
+                Content="Добавить запись"
+                    Click="addText_Click" 
+                    Canvas.Left="22"
+                    Canvas.Top="195"/>
+
+            <Frame x:Name="dataFrame"
+                   Width="504"
+                   Height="300" 
+                   Canvas.Left="243"
+                   Canvas.Top="107"
+                   BorderBrush="Violet"
+                   BorderThickness="7"/>
+        </Canvas>
+
     </Grid>
 </Window>
