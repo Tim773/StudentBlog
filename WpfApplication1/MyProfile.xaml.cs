@@ -39,7 +39,10 @@ namespace WpfApplication1
         private void UserDataPull(Person user)
         {
             Person activeUser = AppClass.entities.Person.
+
                 Where(i => i.email == user.email).FirstOrDefault();
+
+
             userName.Text = activeUser.namePerson.ToString();
             userLastName.Text = activeUser.fNamePerson.ToString();
             userSrName.Text = activeUser.sNamePerson.ToString();
@@ -51,7 +54,9 @@ namespace WpfApplication1
         //добавление поста
         private void addText_Click(object sender, RoutedEventArgs e)
         {
+
             dataFrame.Navigate(new Pages.EditPost());
+
         }
     }
 }
